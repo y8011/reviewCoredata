@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="16G1114" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Category" representedClassName=".Category" syncable="YES">
+        <attribute name="catIDDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="titleOfCat" attributeType="String" syncable="YES"/>
+        <relationship name="todos" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="ToDo" inverseName="category" inverseEntity="ToDo" syncable="YES"/>
+    </entity>
+    <entity name="ToDo" representedClassName=".ToDo" syncable="YES">
+        <attribute name="catTitle" attributeType="String" syncable="YES"/>
+        <attribute name="saveDate" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="title" attributeType="String" syncable="YES"/>
+        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Category" inverseName="todos" inverseEntity="Category" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Category" positionX="-74" positionY="36" width="128" height="88"/>
+        <element name="ToDo" positionX="153" positionY="48" width="117" height="103"/>
+    </elements>
+</model>
